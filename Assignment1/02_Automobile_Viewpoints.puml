@@ -1,0 +1,79 @@
+@startuml
+title 作业二：三个视角下的“汽车”类
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundCorner 8
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam class {
+  BackgroundColor #FFFDF7
+  BorderColor #8B5A2B
+  ArrowColor #8B5A2B
+  FontColor #30251B
+  HeaderBackgroundColor #F3DFC4
+}
+
+package "厂家视角" {
+  class "汽车（生产档案）" as ManufacturerCar {
+    - vin : String
+    - model : String
+    - productionDate : LocalDate
+    - color : String
+    - qualityStatus : String
+    --
+    + assemble() : void
+    + paint(color : String) : void
+    + inspectQuality() : boolean
+    + ship() : void
+  }
+}
+
+package "车主视角" {
+  class "汽车（使用对象）" as OwnerCar {
+    - vin : String
+    - licensePlate : String
+    - brand : String
+    - model : String
+    - mileage : double
+    - fuelLevel : double
+    - locked : boolean
+    --
+    + start() : void
+    + stop() : void
+    + drive(distance : double) : void
+    + refuel(amount : double) : void
+    + lock() : void
+    + unlock() : void
+  }
+}
+
+package "交通管理机构视角" {
+  class "汽车（登记档案）" as RegisteredCar {
+    - vin : String
+    - licensePlate : String
+    - ownerName : String
+    - registrationStatus : String
+    - inspectionDueDate : LocalDate
+    - violationCount : int
+    --
+    + register() : void
+    + transferOwnership(newOwner : String) : void
+    + recordInspection(passed : boolean) : void
+    + recordViolation() : void
+    + isRoadLegal() : boolean
+  }
+}
+
+note as ViewpointNote
+  三个类表示对同一现实对象的不同抽象：
+  厂家关心生产与质检，车主关心驾驶与维护，
+  交通管理机构关心登记、年检与违法记录。
+  三者不存在继承关系。
+end note
+
+ManufacturerCar .. ViewpointNote
+OwnerCar .. ViewpointNote
+RegisteredCar .. ViewpointNote
+
+@enduml

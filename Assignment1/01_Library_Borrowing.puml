@@ -1,0 +1,57 @@
+@startuml
+title 作业一：图书馆借书、还书场景类图
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundCorner 8
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #F7FAFF
+  BorderColor #355C9A
+  ArrowColor #355C9A
+  FontColor #1F2D3D
+  HeaderBackgroundColor #DCE9FA
+}
+
+class "大学生" as Student {
+  - studentId : String
+  - name : String
+  - borrowedBooks : List<Book>
+  --
+  + borrowBook(book : Book) : boolean
+  + returnBook(book : Book) : boolean
+  + getBorrowedBooks() : List<Book>
+}
+
+class "书籍" as Book {
+  - isbn : String
+  - title : String
+  - author : String
+  - available : boolean
+  - borrower : Student
+  --
+  + isAvailable() : boolean
+  + checkOutTo(student : Student) : boolean
+  + markReturned() : void
+}
+
+class "图书馆管理员" as Librarian {
+  - employeeId : String
+  - name : String
+  --
+  + registerBook(book : Book) : void
+  + removeBook(book : Book) : boolean
+  + processLoan(student : Student, book : Book) : boolean
+  + processReturn(student : Student, book : Book) : boolean
+}
+
+Student "0..1" -- "0..*" Book : 借阅 / 归还
+Librarian "1..*" -- "0..*" Book : 管理
+Librarian "1..*" -- "0..*" Student : 办理借还
+
+note bottom of Book
+  available 为 true 时可借；
+  借出后 borrower 指向借阅学生。
+end note
+
+@enduml
