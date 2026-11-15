@@ -1,4 +1,4 @@
-* text=auto
+* text=auto eol=lf
 *.puml text eol=lf
 *.md text eol=lf
 # WSL development scripts require LF

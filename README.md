@@ -8,4 +8,4 @@
 - `course-project/infra/`：本地数据库与 Redis 配置。
 - `期中汇报/`：已有报告初稿、架构分析与 PPT。
 
-先阅读 `course-project/docs/WSL-development.md`。当前同步的是平台基础代码与分析材料，缺陷迁移模块尚未实现。
+先阅读 `course-project/docs/开发环境.md`。当前同步的是平台基础代码与分析材料，缺陷迁移模块尚未实现。
