@@ -1,0 +1,37 @@
+name: oop-course
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Copy .env.example to .env first}
+      MYSQL_DATABASE: spaceexploration
+      MYSQL_USER: ${DB_USERNAME:-course}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Copy .env.example to .env first}
+    ports:
+      - "127.0.0.1:${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ../platform/scripts/spaceexploration.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./02-fixtures.sql:/docker-entrypoint-initdb.d/02-fixtures.sql:ro
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_ai_ci"]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "127.0.0.1:${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+volumes:
+  mysql-data:
+  redis-data:

@@ -1,3 +1,7 @@
 * text=auto
 *.puml text eol=lf
 *.md text eol=lf
+# WSL development scripts require LF
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

@@ -1,0 +1,66 @@
+# Copyright 2025 The ChaosBlade Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+server:
+  port: 8101
+spring:
+  application:
+    name: svc-task-resource
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/spaceexploration?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:course_local}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    open-in-view: false
+  jackson:
+    default-property-inclusion: non-null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+logging:
+  level:
+    com.chaosblade: DEBUG
+    org.springframework.web: DEBUG
+
+# External topology service endpoints
+external:
+  topology:
+    base-url: ${TOPO_BASE_URL:http://localhost:8106}
+    timeout-ms: 15000
+
+endpoints:
+  executor-base-url: http://localhost:8102
+
+llm:
+  api:
+    url: https://api.siliconflow.cn/v1/chat/completions
+    key: ${LLM_API_KEY:}
+    model: Qwen/QwQ-32B
+  timeout:
+    ms: 500000
+  retries: 3

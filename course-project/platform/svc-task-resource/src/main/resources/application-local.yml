@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+external:
+  topology:
+    base-url: ""
+logging:
+  level:
+    com.chaosblade: INFO
+    org.springframework.web: INFO

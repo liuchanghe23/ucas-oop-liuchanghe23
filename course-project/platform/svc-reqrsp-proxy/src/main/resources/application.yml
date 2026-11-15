@@ -1,0 +1,84 @@
+# Copyright 2025 The ChaosBlade Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+server:
+  port: 8105
+
+spring:
+  application:
+    name: svc-reqrsp-proxy
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/spaceexploration?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:course_local}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    open-in-view: false
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+    default-property-inclusion: non-null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: 6379
+      database: 0
+      timeout: 5000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+
+# Kubernetes configuration
+kubernetes:
+  api-url: ${KUBERNETES_API_URL:https://localhost:6443}
+  token: ${KUBERNETES_TOKEN:}
+  verify-ssl: false
+
+# Recording configuration
+recording:
+  envoy:
+    image: envoyproxy/envoy:v1.28.3
+    port: 15006
+    admin-port: 9901
+    tap-dir: /var/log/envoy/taps
+    max-buffered-bytes: 2097152
+  default-duration-sec: 600
+  auto-collect-interval-sec: 30
+
+# Logging configuration
+logging:
+  level:
+    com.chaosblade.svc.reqrspproxy: INFO
+    io.fabric8.kubernetes: INFO
+    org.springframework.data.redis: INFO
+

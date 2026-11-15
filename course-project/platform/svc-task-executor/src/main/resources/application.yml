@@ -1,0 +1,74 @@
+# Copyright 2025 The ChaosBlade Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+kubernetes:
+  api-url: ${KUBERNETES_API_URL:https://localhost:6443}
+  token: ${KUBERNETES_TOKEN:}
+  verify-ssl: false
+
+server:
+  port: 8102
+spring:
+  application:
+    name: svc-task-executor
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/spaceexploration?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:course_local}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+proxy:
+  base-url: ${PROXY_BASE_URL:http://localhost:8105}
+  connect-timeout-ms: 10000
+  read-timeout-ms: 30000
+  max-retries: 3
+  backoff-ms: 1000
+  ttl-sec-for-interceptors: 600
+  wait-analyze-timeout-sec: 600
+  wait-interceptor-ready-sec: 30
+
+
+# Fault scheduler endpoint
+scheduler:
+  base-url: ${SCHEDULER_BASE_URL:http://localhost:8103}
+
+recording:
+  default-port: 0
+  service-ports: {}
+  token: ${KUBERNETES_TOKEN:}
+  verify-ssl: false
+
+
+llm:
+  api:
+    url: https://api.siliconflow.cn/v1/chat/completions
+    key: ${LLM_API_KEY:}
+    model: Qwen/QwQ-32B
+  timeout:
+    ms: 2000000
+  retries: 2

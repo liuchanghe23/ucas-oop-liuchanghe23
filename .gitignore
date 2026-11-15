@@ -1,0 +1,15 @@
+# Local-only files and generated outputs
+.env
+.env.*
+!.env.example
+**/target/
+**/node_modules/
+**/logs/
+**/.idea/
+**/.vscode/
+**/.m2/
+*.log
+*.pid
+.DS_Store
+Thumbs.db
+.local/
