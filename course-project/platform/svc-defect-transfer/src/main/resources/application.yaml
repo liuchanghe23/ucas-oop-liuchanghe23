@@ -1,0 +1,14 @@
+server:
+  address: ${DEFECT_BIND_ADDRESS:127.0.0.1}
+  port: ${DEFECT_PORT:8107}
+spring:
+  application:
+    name: svc-defect-transfer
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  servlet:
+    multipart:
+      enabled: false
+transfer:
+  store-dir: ${DEFECT_STORE_DIR:../.local/defect-transfer}

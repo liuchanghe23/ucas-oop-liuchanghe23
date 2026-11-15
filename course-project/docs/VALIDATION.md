@@ -44,3 +44,17 @@ Docker Hub image downloads time out on the current network. Redis's official pub
 No Kubernetes cluster or ChaosBlade Operator has been deployed. Full fault injection, target-system deployment, Jaeger integration and the complete integration suite remain outside this local setup verification. Shared course infrastructure was not modified.
 
 Raw build/test logs are local at /home/liuchanghe/.local/state/oop/; test details are in the ignored Maven target/surefire-reports directory.
+
+
+## Defect-transfer increment (2026-11-15)
+
+- New standalone svc-defect-transfer on WSL loopback port 8107; no database dependency.
+- All 11 Maven reactor modules package successfully with tests skipped for this aggregate build. The new module was tested separately; Spotless check passes for its 16 Java files.
+- 33 new tests pass (0 failures, 0 errors, 0 skipped), including template immutability, three-valued matching, evidence gaps, limits and abstract planning.
+- Real HTTP smoke: all 15 drafts imported idempotently; T10/T11 synthetic flows generate auditable plans; five source hints extracted from the clean OpenTelemetry Demo checkout, all INFERRED.
+- All 15 source-profile checks remain UNKNOWN, including 13 unimplemented rulesets. No dynamic defect verdict is claimed.
+- Restart persistence verified by fetching a pre-existing plan ID after service restart.
+- Source scan output and reports are ignored under course-project/.local/defect-transfer-demo/. See [implementation record](4.2阶段1实现与验证.md).
+- Original scheduler test failures above remain unchanged; they are not included in the new module's passing test count.
+
+Windows-to-WSL localhost forwarding for port 8107 did not pass the host-side check in this session. The verified access path is inside WSL (`curl http://127.0.0.1:8107/api/defect-transfer/health` or the demo script).

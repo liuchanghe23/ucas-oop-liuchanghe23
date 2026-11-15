@@ -58,6 +58,7 @@
     <module>svc-reqrsp-proxy</module>
     <module>svc-topo</module>
     <module>svc-unified</module>
+    <module>svc-defect-transfer</module>
   </modules>
 
   <dependencyManagement>

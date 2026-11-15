@@ -1,0 +1,173 @@
+{
+  "DT-MQ-REDELIVER-001": {
+    "version": "t10-v1",
+    "applicability": [
+      {
+        "id": "A1",
+        "predicate": {
+          "op": "ALL",
+          "operands": [
+            {
+              "op": "RELATION",
+              "source": "broker",
+              "target": "consumer",
+              "type": "DELIVERS"
+            },
+            {
+              "op": "EQ",
+              "subject": "consumer",
+              "key": "capability.side_effect_write",
+              "value": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "A2",
+        "predicate": {
+          "op": "ANY",
+          "operands": [
+            {
+              "op": "EQ",
+              "subject": "consumer",
+              "key": "sideEffectBeforeCommit",
+              "value": true
+            },
+            {
+              "op": "EQ",
+              "subject": "consumer",
+              "key": "commitMode",
+              "value": "periodic"
+            }
+          ]
+        }
+      }
+    ],
+    "defectOperator": "ANY",
+    "defects": [
+      {
+        "id": "D1",
+        "predicate": {
+          "op": "EQ",
+          "subject": "consumer",
+          "key": "dedup.present",
+          "value": false
+        }
+      },
+      {
+        "id": "D2",
+        "predicate": {
+          "op": "ANY",
+          "operands": [
+            {
+              "op": "EQ",
+              "subject": "consumer",
+              "key": "dedup.stableKey",
+              "value": false
+            },
+            {
+              "op": "EQ",
+              "subject": "consumer",
+              "key": "dedup.atomicWithEffect",
+              "value": false
+            }
+          ]
+        }
+      }
+    ],
+    "templateVersion": 1,
+    "sourceHash": "5f161940b2e32f549778f41e269726a8d8a4e26b5ce42615155e6b2787dc91e7",
+    "review": {
+      "status": "IMPLEMENTATION_REVIEW_REQUIRED",
+      "scope": "Static checks and abstract plan only; no incident provenance verification.",
+      "parameterPolicy": "T11 uses a confirmed total publish budget (including attempts/backoff/deadline), multiplied by two; never retries times timeout.",
+      "oraclePolicy": "Retain original publish-failure requirement; ack=0 needs a correlated failure observer."
+    }
+  },
+  "DT-DUALWRITE-LOST-001": {
+    "version": "t11-v1",
+    "applicability": [
+      {
+        "id": "A1",
+        "predicate": {
+          "op": "ALL",
+          "operands": [
+            {
+              "op": "RELATION",
+              "source": "producer",
+              "target": "broker",
+              "type": "PUBLISHES"
+            },
+            {
+              "op": "RELATION",
+              "source": "broker",
+              "target": "downstream",
+              "type": "DELIVERS"
+            },
+            {
+              "op": "EQ",
+              "subject": "producer",
+              "key": "sideEffectBeforePublish",
+              "value": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "A2",
+        "predicate": {
+          "op": "EQ",
+          "subject": "producer",
+          "key": "effectAndPublishIndependent",
+          "value": true
+        }
+      }
+    ],
+    "defectOperator": "ALL",
+    "defects": [
+      {
+        "id": "D1",
+        "predicate": {
+          "op": "EQ",
+          "subject": "producer",
+          "key": "durableRetry.present",
+          "value": false
+        }
+      },
+      {
+        "id": "D2",
+        "predicate": {
+          "op": "ALL",
+          "operands": [
+            {
+              "op": "EQ",
+              "subject": "producer",
+              "key": "outbox.present",
+              "value": false
+            },
+            {
+              "op": "EQ",
+              "subject": "producer",
+              "key": "cdc.present",
+              "value": false
+            },
+            {
+              "op": "EQ",
+              "subject": "producer",
+              "key": "reconciliation.present",
+              "value": false
+            }
+          ]
+        }
+      }
+    ],
+    "templateVersion": 1,
+    "sourceHash": "143e57771cd94a0a902b83bfdd35b1e0fe57545c69549720ece211e240bbf22a",
+    "review": {
+      "status": "IMPLEMENTATION_REVIEW_REQUIRED",
+      "scope": "Static checks and abstract plan only; no incident provenance verification.",
+      "parameterPolicy": "T11 uses a confirmed total publish budget (including attempts/backoff/deadline), multiplied by two; never retries times timeout.",
+      "oraclePolicy": "Retain original publish-failure requirement; ack=0 needs a correlated failure observer."
+    }
+  }
+}

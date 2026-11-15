@@ -1,0 +1,41 @@
+{
+  "matchId": "REPLACE_WITH_MATCH_ID",
+  "bindingIndex": 0,
+  "strategy": "PRECISE",
+  "catalog": {
+    "id": "synthetic-capability-catalog",
+    "version": "fixture-v1",
+    "executorCapabilities": [
+      "network_loss.edge",
+      "process_kill.after_side_effect_before_commit",
+      "process_kill.probabilistic",
+      "recovery.explicit"
+    ],
+    "observerCapabilities": [
+      "exposure.edge_loss",
+      "business.side_effect",
+      "publish.failure.correlated",
+      "downstream.record",
+      "recovery.healthy",
+      "protection.delivery",
+      "exposure.consumer_restart",
+      "message.redelivery.correlated",
+      "business.effect_count",
+      "protection.dedup"
+    ],
+    "evidenceIds": [
+      "synthetic-fixture"
+    ]
+  },
+  "workload": {
+    "description": "Synthetic API demo only; no requests will be sent",
+    "businessKey": "orderId",
+    "ratePerSecond": 2,
+    "requests": 10
+  },
+  "limits": {
+    "maxFaultDurationMs": 300000,
+    "maxRatePerSecond": 5,
+    "maxRequests": 50
+  }
+}

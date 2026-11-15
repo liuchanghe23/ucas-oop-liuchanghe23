@@ -1,0 +1,127 @@
+{
+  "systemId": "synthetic-message-demo",
+  "revision": "fixture-v1-NOT-A-REAL-DEPLOYMENT",
+  "environment": "SYNTHETIC",
+  "entities": [
+    {
+      "id": "queue",
+      "kind": "service",
+      "facts": {
+        "capability.at_least_once_delivery": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        }
+      }
+    },
+    {
+      "id": "reader",
+      "kind": "service",
+      "facts": {
+        "capability.side_effect_write": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "commitMode": {
+          "value": "periodic",
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "dedup.present": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "dedup.stableKey": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "dedup.atomicWithEffect": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        }
+      }
+    },
+    {
+      "id": "dedup-db",
+      "kind": "service",
+      "facts": {
+        "capability.dedup": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "to": "reader",
+      "type": "DELIVERS",
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ],
+      "from": "queue"
+    },
+    {
+      "to": "reader",
+      "type": "PROTECTS",
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ],
+      "from": "dedup-db"
+    }
+  ],
+  "facts": {
+    "inventory.complete": {
+      "value": true,
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ]
+    },
+    "capabilities.complete": {
+      "value": true,
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ]
+    },
+    "topology.complete": {
+      "value": true,
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "synthetic-fixture",
+      "kind": "SYNTHETIC",
+      "locator": "course-project/examples/defect-transfer",
+      "scope": "Synthetic unit/API demonstration only",
+      "detail": "Constructed facts and declared capabilities; not evidence from OpenTelemetry Demo or a real executor.",
+      "reviewer": null
+    }
+  ]
+}

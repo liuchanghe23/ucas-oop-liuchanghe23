@@ -35,6 +35,8 @@ case "${1:-doctor}" in
     ;;
   build) cd "$PLATFORM"; mvn -B -ntp -DskipTests package ;;
   test) cd "$PLATFORM"; mvn -B -ntp test ;;
+  test-defect) cd "$PLATFORM"; mvn -B -ntp -pl svc-defect-transfer -am test ;;
+  demo-defect) python3 "$ROOT/scripts/defect-demo.py" "${@:2}" ;;
   test-unit)
     cd "$PLATFORM"
     mvn -B -ntp -pl svc-fault-scheduler -am -Dtest=SpecNormalizerTest,FaultsServiceTest -Dsurefire.failIfNoSpecifiedTests=false test
@@ -42,7 +44,7 @@ case "${1:-doctor}" in
   start)
     service=${2:-svc-task-resource}
     case "$service" in
-      svc-task-resource|svc-task-executor|svc-result-processor|svc-topo|svc-fault-scheduler|svc-reqrsp-proxy) ;;
+      svc-task-resource|svc-task-executor|svc-result-processor|svc-topo|svc-fault-scheduler|svc-reqrsp-proxy|svc-defect-transfer) ;;
       *) echo "Unknown service: $service" >&2; exit 1 ;;
     esac
     [[ -f "$ROOT/.env" ]] || { echo "Run dev.sh infra first" >&2; exit 1; }
@@ -56,7 +58,7 @@ case "${1:-doctor}" in
     echo "Started $service; log: $LOCAL/logs/$service.log"
     ;;
   stop)
-    for service in svc-task-resource svc-task-executor svc-result-processor svc-topo svc-fault-scheduler svc-reqrsp-proxy; do
+    for service in svc-task-resource svc-task-executor svc-result-processor svc-topo svc-fault-scheduler svc-reqrsp-proxy svc-defect-transfer; do
       if systemctl --user is-active --quiet "oop-$service"; then
         systemctl --user stop "oop-$service"
       fi
@@ -69,5 +71,5 @@ case "${1:-doctor}" in
       compose down
     fi
     ;;
-  *) echo "Usage: bash scripts/dev.sh {doctor|infra|build|test|test-unit|start [service]|stop|down}" >&2; exit 1 ;;
+  *) echo "Usage: bash scripts/dev.sh {doctor|infra|build|test|test-unit|test-defect|demo-defect [options]|start [service]|stop|down}" >&2; exit 1 ;;
 esac

@@ -1,0 +1,176 @@
+{
+  "systemId": "synthetic-message-demo",
+  "revision": "fixture-v1-NOT-A-REAL-DEPLOYMENT",
+  "environment": "SYNTHETIC",
+  "entities": [
+    {
+      "id": "writer",
+      "kind": "service",
+      "facts": {
+        "capability.side_effect_write": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "capability.publish": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "sideEffectBeforePublish": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "effectAndPublishIndependent": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "durableRetry.present": {
+          "value": false,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "outbox.present": {
+          "value": false,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "cdc.present": {
+          "value": false,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "reconciliation.present": {
+          "value": false,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "publish.totalBudgetMs": {
+          "value": 2500,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "publish.retries": {
+          "value": 0,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "publish.acks": {
+          "value": 1,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        },
+        "downstreamRecoveryBoundMs": {
+          "value": 10000,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        }
+      }
+    },
+    {
+      "id": "queue",
+      "kind": "service",
+      "facts": {
+        "capability.queue": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        }
+      }
+    },
+    {
+      "id": "reader",
+      "kind": "service",
+      "facts": {
+        "capability.consume": {
+          "value": true,
+          "certainty": "CONFIRMED",
+          "evidenceIds": [
+            "synthetic-fixture"
+          ]
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "to": "queue",
+      "type": "PUBLISHES",
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ],
+      "from": "writer"
+    },
+    {
+      "to": "reader",
+      "type": "DELIVERS",
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ],
+      "from": "queue"
+    }
+  ],
+  "facts": {
+    "inventory.complete": {
+      "value": true,
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ]
+    },
+    "capabilities.complete": {
+      "value": true,
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ]
+    },
+    "topology.complete": {
+      "value": true,
+      "certainty": "CONFIRMED",
+      "evidenceIds": [
+        "synthetic-fixture"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "synthetic-fixture",
+      "kind": "SYNTHETIC",
+      "locator": "course-project/examples/defect-transfer",
+      "scope": "Synthetic unit/API demonstration only",
+      "detail": "Constructed facts and declared capabilities; not evidence from OpenTelemetry Demo or a real executor.",
+      "reviewer": null
+    }
+  ]
+}
