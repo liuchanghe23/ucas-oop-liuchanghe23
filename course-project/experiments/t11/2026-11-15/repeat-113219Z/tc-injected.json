@@ -1,0 +1,4 @@
+{
+  "qdisc": "qdisc prio 1: root refcnt 17 bands 4 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1\n Sent 287 bytes 4 pkt (dropped 0, overlimits 0 requeues 0) \n backlog 0b 0p requeues 0\nqdisc netem 40: parent 1:4 limit 1000 loss 100% seed 6300026560098417760\n Sent 0 bytes 0 pkt (dropped 0, overlimits 0 requeues 0) \n backlog 0b 0p requeues 0\n",
+  "filters": "filter parent 1: protocol ip pref 4 u32 chain 0 \nfilter parent 1: protocol ip pref 4 u32 chain 0 fh 800: ht divisor 1 \nfilter parent 1: protocol ip pref 4 u32 chain 0 fh 800::800 order 2048 key ht 800 bkt 0 flowid 1:4 not_in_hw (rule hit 4 success 0)\n  match 0a2b20e7/ffffffff at 16 (success 0 ) \n  match 00002384/0000ffff at 20 (success 0 ) \nfilter parent 1: protocol ip pref 4 u32 chain 0 fh 800::801 order 2049 key ht 800 bkt 0 flowid 1:4 not_in_hw (rule hit 4 success 0)\n  match 0a2a000a/ffffffff at 16 (success 0 ) \n  match 00002384/0000ffff at 20 (success 0 ) \n"
+}

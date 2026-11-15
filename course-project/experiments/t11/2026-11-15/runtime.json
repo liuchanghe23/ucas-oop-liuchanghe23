@@ -1,0 +1,132 @@
+[
+  {
+    "component": "accounting",
+    "pod": "accounting-58c8f49bdb-p24b2",
+    "podUid": "cd5f8216-52c3-4394-afce-53f6ef065764",
+    "podIp": "10.42.0.18",
+    "image": "ghcr.io/open-telemetry/demo@sha256:24c7a4d180d510179e5f9cbc8cc962804ff5472ada52b9ce6536878d16442f99",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:24c7a4d180d510179e5f9cbc8cc962804ff5472ada52b9ce6536878d16442f99",
+    "containerId": "containerd://1519cbbe13f5b769c672bba6e5edbdd9fd3305fa18ce7d8459087bdd18378b7c",
+    "ready": true
+  },
+  {
+    "component": "astronomy-db",
+    "pod": "astronomy-db-5974b8f76c-sldwz",
+    "podUid": "f337a429-44fe-4884-bc1d-64e29541ff80",
+    "podIp": "10.42.0.7",
+    "image": "docker.io/library/postgres@sha256:4cc13dede823cab4e05290c7fb3350fb4e599ecabd9b07e6706b5d5e8f5bc929",
+    "runtimeImageId": "docker.io/library/postgres@sha256:4cc13dede823cab4e05290c7fb3350fb4e599ecabd9b07e6706b5d5e8f5bc929",
+    "containerId": "containerd://15390f9449798366b6c03e73adb593ed18cf04a4942bc1022dc352c3da2114a5",
+    "ready": true
+  },
+  {
+    "component": "cart",
+    "pod": "cart-7997d7b45d-48cxs",
+    "podUid": "5bc9b6af-8014-496d-8160-0828aa3f85f2",
+    "podIp": "10.42.0.11",
+    "image": "ghcr.io/open-telemetry/demo@sha256:4b1ecc263cd8b0d63ce7cd6e99012d4cac73a2d39721aad812f2608d1730e846",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:4b1ecc263cd8b0d63ce7cd6e99012d4cac73a2d39721aad812f2608d1730e846",
+    "containerId": "containerd://596c55793daa0f90f65953ccc8817f5c0dcf29d0830dcba57ff80a6f7cba0b48",
+    "ready": true
+  },
+  {
+    "component": "checkout",
+    "pod": "checkout-794fd6dff5-jp9r8",
+    "podUid": "3166b29c-763c-4bb8-a42c-e7c34cc979dd",
+    "podIp": "10.42.0.20",
+    "image": "ghcr.io/open-telemetry/demo@sha256:5835cc2c382533bc5532c4958f9fbbc93ae38a4090dd66d7ddafdf00a5b359be",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:5835cc2c382533bc5532c4958f9fbbc93ae38a4090dd66d7ddafdf00a5b359be",
+    "containerId": "containerd://e6279266ec94975a386dae3a0bf7297e7c22b19684bec4a2e0ab6f80c33e6d87",
+    "ready": true
+  },
+  {
+    "component": "currency",
+    "pod": "currency-77cd96bf9d-t2424",
+    "podUid": "42732b45-c6e0-4c4e-b7b1-606cf021bca3",
+    "podIp": "10.42.0.12",
+    "image": "ghcr.io/open-telemetry/demo@sha256:6bfc08ad09cca353e211ef478b150ebd9c9d360385fe86f4c432a816692eb8ce",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:6bfc08ad09cca353e211ef478b150ebd9c9d360385fe86f4c432a816692eb8ce",
+    "containerId": "containerd://acb7b23b4a48750b91032f12f20aeba810b9b6ca67c64f5e28f7ca311306ef83",
+    "ready": true
+  },
+  {
+    "component": "email",
+    "pod": "email-55bc9d5779-s9g9f",
+    "podUid": "cd11e94c-96e7-46ce-9cdf-9f8e604033b5",
+    "podIp": "10.42.0.16",
+    "image": "ghcr.io/open-telemetry/demo@sha256:c69d721733f5c99fb259b5739cb71639a1a308903f58f42bfeea25820eb14fab",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:c69d721733f5c99fb259b5739cb71639a1a308903f58f42bfeea25820eb14fab",
+    "containerId": "containerd://b0dd8a04704704a37f8b2de1418135e678ba7c0de244c5e2090fb9059bb55025",
+    "ready": true
+  },
+  {
+    "component": "flagd",
+    "pod": "flagd-7fffb4df9f-b47sx",
+    "podUid": "65f9d5cc-4445-459f-9fae-c05b4e89b190",
+    "podIp": "10.42.0.8",
+    "image": "ghcr.io/open-feature/flagd@sha256:128e5f6a0d34dc3224c762167997db767b034c0bd660db15a42fc487b5df0541",
+    "runtimeImageId": "ghcr.io/open-feature/flagd@sha256:128e5f6a0d34dc3224c762167997db767b034c0bd660db15a42fc487b5df0541",
+    "containerId": "containerd://38d46489861bc2f759996961a7ca5e957c7b46d72c270d420cea45ee54a0b800",
+    "ready": true
+  },
+  {
+    "component": "kafka",
+    "pod": "kafka-74dcbf58c7-w5xvj",
+    "podUid": "84969a3b-a368-4048-a4d1-e08a8e3b6073",
+    "podIp": "10.42.0.10",
+    "image": "ghcr.io/open-telemetry/demo@sha256:626584c8e41a5f93cb74c82554d137809b0304a74272c0a9724fdfec7d76c9c2",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:626584c8e41a5f93cb74c82554d137809b0304a74272c0a9724fdfec7d76c9c2",
+    "containerId": "containerd://1292a6c631d85048b9183d7a27139593e8e0fd48a90d45468ba2856c728f851c",
+    "ready": true
+  },
+  {
+    "component": "payment",
+    "pod": "payment-8478ff598b-v2b7w",
+    "podUid": "da429910-1cb9-4a09-846f-1ead84cf634f",
+    "podIp": "10.42.0.15",
+    "image": "ghcr.io/open-telemetry/demo@sha256:3f9e0b47920817c98f950a02f7deedd4b32917e9bc5dd82bd49b2b6b2dba7751",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:3f9e0b47920817c98f950a02f7deedd4b32917e9bc5dd82bd49b2b6b2dba7751",
+    "containerId": "containerd://e4adcc4d23a31777046adb67d2d63a81eb62054b45d53ddb3666747282fd6d36",
+    "ready": true
+  },
+  {
+    "component": "product-catalog",
+    "pod": "product-catalog-68f7ff576-fxps5",
+    "podUid": "b5181f5b-2bd9-4753-abd0-123f73feed0a",
+    "podIp": "10.42.0.17",
+    "image": "ghcr.io/open-telemetry/demo@sha256:ab877a13a0496a616b0dfe5bd5979c0afcb297d85811be7264e1c0b950f608d2",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:ab877a13a0496a616b0dfe5bd5979c0afcb297d85811be7264e1c0b950f608d2",
+    "containerId": "containerd://0a6d85f6634662641d3a953b6752bd6ea4cec06e1ccd38c4286f3f00045e7c04",
+    "ready": true
+  },
+  {
+    "component": "quote",
+    "pod": "quote-84d5cc8c84-925wq",
+    "podUid": "c2bbb4bd-f342-46a5-93df-6318193f31ce",
+    "podIp": "10.42.0.13",
+    "image": "ghcr.io/open-telemetry/demo@sha256:b6ab106c25defd5072bcad7d22cdb7895bc7cf5a8fd9dd9f2c5c94d65b6bf5b5",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:b6ab106c25defd5072bcad7d22cdb7895bc7cf5a8fd9dd9f2c5c94d65b6bf5b5",
+    "containerId": "containerd://baa37cff7ba1e835b911f4078d96e0cbdf9d9aab115c7ed960eddc7493f63d07",
+    "ready": true
+  },
+  {
+    "component": "shipping",
+    "pod": "shipping-6866f4f4fb-4tlrn",
+    "podUid": "a5f1b963-9253-4198-9417-5878929cb145",
+    "podIp": "10.42.0.14",
+    "image": "ghcr.io/open-telemetry/demo@sha256:9ac833f24c4976202be61308d7d53038882c13b793029a8fd59d39bb9fadd674",
+    "runtimeImageId": "ghcr.io/open-telemetry/demo@sha256:9ac833f24c4976202be61308d7d53038882c13b793029a8fd59d39bb9fadd674",
+    "containerId": "containerd://ce15b096366a351d21575e4256e5ce378a6fed2d4dfb6106c77b9e2cd0c5eb3f",
+    "ready": true
+  },
+  {
+    "component": "valkey-cart",
+    "pod": "valkey-cart-574b949dd9-djwmp",
+    "podUid": "bbe063e7-1d06-4623-bae4-f8b422f79589",
+    "podIp": "10.42.0.9",
+    "image": "ghcr.io/valkey-io/valkey@sha256:b559f9babc64e52c9eefc8734e392707cebf4264be7acf5f7b69ba484e053367",
+    "runtimeImageId": "ghcr.io/valkey-io/valkey@sha256:b559f9babc64e52c9eefc8734e392707cebf4264be7acf5f7b69ba484e053367",
+    "containerId": "containerd://6cee5ae73b6bd64c9db88062f88b085584bf8856618f1ca2446113d7b4ad931c",
+    "ready": true
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "apiVersion": "chaosblade.io/v1alpha1",
+  "kind": "ChaosBlade",
+  "metadata": {
+    "name": "t11-75343ea8f70b"
+  },
+  "spec": {
+    "experiments": [
+      {
+        "scope": "pod",
+        "target": "network",
+        "action": "loss",
+        "desc": "T11 isolated checkout to Kafka diagnostic",
+        "matchers": [
+          {
+            "name": "names",
+            "value": [
+              "checkout-794fd6dff5-jp9r8"
+            ]
+          },
+          {
+            "name": "namespace",
+            "value": [
+              "oop-t11"
+            ]
+          },
+          {
+            "name": "interface",
+            "value": [
+              "eth0"
+            ]
+          },
+          {
+            "name": "percent",
+            "value": [
+              "100"
+            ]
+          },
+          {
+            "name": "remote-port",
+            "value": [
+              "9092"
+            ]
+          },
+          {
+            "name": "destination-ip",
+            "value": [
+              "10.43.32.231",
+              "10.42.0.10"
+            ]
+          },
+          {
+            "name": "use-sidecar-container-network",
+            "value": [
+              "true"
+            ]
+          },
+          {
+            "name": "timeout",
+            "value": [
+              "45"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

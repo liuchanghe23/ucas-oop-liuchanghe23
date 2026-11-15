@@ -1,0 +1,104 @@
+{
+  "apiVersion": "chaosblade.io/v1alpha1",
+  "kind": "ChaosBlade",
+  "metadata": {
+    "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaosblade.io/v1alpha1\",\"kind\":\"ChaosBlade\",\"metadata\":{\"annotations\":{},\"labels\":{\"created-by\":\"svc-fault-scheduler\",\"fault-id\":\"acbf8b987c554af6bf0dbeaba2466f5f\",\"owner\":\"faults-api\"},\"name\":\"t11-75343ea8f70b\"},\"spec\":{\"experiments\":[{\"action\":\"loss\",\"desc\":\"T11 isolated checkout to Kafka diagnostic\",\"matchers\":[{\"name\":\"names\",\"value\":[\"checkout-794fd6dff5-jp9r8\"]},{\"name\":\"namespace\",\"value\":[\"oop-t11\"]},{\"name\":\"interface\",\"value\":[\"eth0\"]},{\"name\":\"percent\",\"value\":[\"100\"]},{\"name\":\"remote-port\",\"value\":[\"9092\"]},{\"name\":\"destination-ip\",\"value\":[\"10.43.32.231\",\"10.42.0.10\"]},{\"name\":\"use-sidecar-container-network\",\"value\":[\"true\"]},{\"name\":\"timeout\",\"value\":[\"45\"]}],\"scope\":\"pod\",\"target\":\"network\"}]}}\n"
+    },
+    "creationTimestamp": "2026-11-15T11:32:20Z",
+    "finalizers": [
+      "finalizer.chaosblade.io"
+    ],
+    "generation": 1,
+    "labels": {
+      "created-by": "svc-fault-scheduler",
+      "fault-id": "acbf8b987c554af6bf0dbeaba2466f5f",
+      "owner": "faults-api"
+    },
+    "name": "t11-75343ea8f70b",
+    "resourceVersion": "1668",
+    "uid": "545cc54e-ecde-42b4-bceb-041614481410"
+  },
+  "spec": {
+    "experiments": [
+      {
+        "action": "loss",
+        "desc": "T11 isolated checkout to Kafka diagnostic",
+        "matchers": [
+          {
+            "name": "names",
+            "value": [
+              "checkout-794fd6dff5-jp9r8"
+            ]
+          },
+          {
+            "name": "namespace",
+            "value": [
+              "oop-t11"
+            ]
+          },
+          {
+            "name": "interface",
+            "value": [
+              "eth0"
+            ]
+          },
+          {
+            "name": "percent",
+            "value": [
+              "100"
+            ]
+          },
+          {
+            "name": "remote-port",
+            "value": [
+              "9092"
+            ]
+          },
+          {
+            "name": "destination-ip",
+            "value": [
+              "10.43.32.231",
+              "10.42.0.10"
+            ]
+          },
+          {
+            "name": "use-sidecar-container-network",
+            "value": [
+              "true"
+            ]
+          },
+          {
+            "name": "timeout",
+            "value": [
+              "45"
+            ]
+          }
+        ],
+        "scope": "pod",
+        "target": "network"
+      }
+    ]
+  },
+  "status": {
+    "expStatuses": [
+      {
+        "action": "loss",
+        "resStatuses": [
+          {
+            "id": "42900814b921754e",
+            "identifier": "oop-t11/oop-t11/checkout-794fd6dff5-jp9r8/checkout/e6279266ec94975a386dae3a0bf7297e7c22b19684bec4a2e0ab6f80c33e6d87/containerd",
+            "kind": "pod",
+            "state": "Success",
+            "success": true
+          }
+        ],
+        "scope": "pod",
+        "state": "Success",
+        "success": true,
+        "target": "network"
+      }
+    ],
+    "phase": "Running"
+  }
+}

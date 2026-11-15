@@ -1,0 +1,77 @@
+[
+  {
+    "image": "ghcr.io/chaosblade-io/chaosblade-operator:1.8.0",
+    "registryManifestDigest": "sha256:131725633d0b8c3be7f148606beb4eb8354aec46c0ff758c633987778abd38ae",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/chaosblade-io/chaosblade-tool:1.8.0",
+    "registryManifestDigest": "sha256:3cfb966ff8da8575c31f8b4038e978bd4e1b0316cf0f125c7b6296877a27c8f2",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-checkout",
+    "registryManifestDigest": "sha256:5835cc2c382533bc5532c4958f9fbbc93ae38a4090dd66d7ddafdf00a5b359be",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-accounting",
+    "registryManifestDigest": "sha256:24c7a4d180d510179e5f9cbc8cc962804ff5472ada52b9ce6536878d16442f99",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-kafka",
+    "registryManifestDigest": "sha256:626584c8e41a5f93cb74c82554d137809b0304a74272c0a9724fdfec7d76c9c2",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-cart",
+    "registryManifestDigest": "sha256:4b1ecc263cd8b0d63ce7cd6e99012d4cac73a2d39721aad812f2608d1730e846",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-currency",
+    "registryManifestDigest": "sha256:6bfc08ad09cca353e211ef478b150ebd9c9d360385fe86f4c432a816692eb8ce",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-payment",
+    "registryManifestDigest": "sha256:3f9e0b47920817c98f950a02f7deedd4b32917e9bc5dd82bd49b2b6b2dba7751",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-shipping",
+    "registryManifestDigest": "sha256:9ac833f24c4976202be61308d7d53038882c13b793029a8fd59d39bb9fadd674",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-email",
+    "registryManifestDigest": "sha256:c69d721733f5c99fb259b5739cb71639a1a308903f58f42bfeea25820eb14fab",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-product-catalog",
+    "registryManifestDigest": "sha256:ab877a13a0496a616b0dfe5bd5979c0afcb297d85811be7264e1c0b950f608d2",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-telemetry/demo:3.1.0-quote",
+    "registryManifestDigest": "sha256:b6ab106c25defd5072bcad7d22cdb7895bc7cf5a8fd9dd9f2c5c94d65b6bf5b5",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/open-feature/flagd:v0.16.0",
+    "registryManifestDigest": "sha256:128e5f6a0d34dc3224c762167997db767b034c0bd660db15a42fc487b5df0541",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "docker.io/library/postgres:18.4",
+    "registryManifestDigest": "sha256:4cc13dede823cab4e05290c7fb3350fb4e599ecabd9b07e6706b5d5e8f5bc929",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "ghcr.io/valkey-io/valkey:9.0.4-alpine3.23",
+    "registryManifestDigest": "sha256:b559f9babc64e52c9eefc8734e392707cebf4264be7acf5f7b69ba484e053367",
+    "platform": "linux/amd64"
+  }
+]

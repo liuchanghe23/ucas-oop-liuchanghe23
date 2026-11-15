@@ -41,7 +41,7 @@ The two production classes and two test classes were compared with the original 
 
 Docker Hub image downloads time out on the current network. Redis's official public ECR image downloaded, but MySQL image download did not; no Compose stack is claimed to be running. Native MySQL/Redis are the working local infrastructure.
 
-No Kubernetes cluster or ChaosBlade Operator has been deployed. Full fault injection, target-system deployment, Jaeger integration and the complete integration suite remain outside this local setup verification. Shared course infrastructure was not modified.
+At the initial environment-verification stage, no Kubernetes cluster or ChaosBlade Operator had been deployed. The later T11 increment below supersedes that environment status. Full fault injection, target-system deployment, Jaeger integration and the complete integration suite remain outside this local setup verification. Shared course infrastructure was not modified.
 
 Raw build/test logs are local at /home/liuchanghe/.local/state/oop/; test details are in the ignored Maven target/surefire-reports directory.
 
@@ -58,3 +58,17 @@ Raw build/test logs are local at /home/liuchanghe/.local/state/oop/; test detail
 - Original scheduler test failures above remain unchanged; they are not included in the new module's passing test count.
 
 Windows-to-WSL localhost forwarding for port 8107 did not pass the host-side check in this session. The verified access path is inside WSL (`curl http://127.0.0.1:8107/api/defect-transfer/health` or the demo script).
+
+
+## T11 isolated real diagnostic increment (2026-11-15)
+
+- Installed a dedicated local K3s v1.32.9+k3s1 node and ChaosBlade Operator/Tool 1.8.0; deployed 13 OpenTelemetry Demo 3.1.0 components in the isolated oop-t11 namespace using pinned registry image digests.
+- Original platform scheduler successfully created and removed a real checkout-to-Kafka pod network-loss experiment. No original platform Java business code was changed.
+- First valid run: baseline 3/3 orders delivered; 20-second 100% edge loss dropped 10 packets; all 5 accepted fault-window orders appeared in accounting by the recovery +10-second sample; the recovery control order also arrived.
+- Cleanup verified independently: no ChaosBlade CR remains and the selected interface returned to noqueue with no filters.
+- Verdict remains INCONCLUSIVE: runtime publish budget, correlated publish failures and image-to-source build provenance remain unverified. This does not prove protection or repair.
+- The defect-transfer service remains static with executionEnabled=false; a separate diagnostic script drove this experiment through the scheduler.
+- Reusable baseline/diagnostic/manifest scripts and sanitized evidence are checked in. Local tokens, kubeconfig, database passwords, images and full logs are ignored.
+- See [T11 experiment record](T11首次真实实验记录.md).
+
+- A repeat using the checked-in scripts passed the 3/3 baseline, returned 4 order responses and 1 client deadline, delivered all 4 visible order IDs after recovery, and restored the fault rules. The timed-out request has a matching payment event but its final business outcome is unresolved; the repeat is also INCONCLUSIVE. Both runs are retained.

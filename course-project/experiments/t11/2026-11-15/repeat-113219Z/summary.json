@@ -1,0 +1,260 @@
+{
+  "scope": "REAL_ISOLATED_T11_DIAGNOSTIC",
+  "name": "t11-75343ea8f70b",
+  "startedAt": "2026-11-15T11:32:20.760860+00:00",
+  "templateId": "DT-DUALWRITE-LOST-001",
+  "faultSeconds": 20,
+  "recoveryWaitSeconds": 30,
+  "conclusion": "INCONCLUSIVE",
+  "cleanupStatus": "RESTORED",
+  "limitations": [
+    "Manual diagnostic experiment; not compiled or executed by svc-defect-transfer.",
+    "Effective total publish retry budget is not yet established; this challenge does not prove exhaustion.",
+    "Reference source uses ack=0; effective runtime producer configuration and correlated publish-failure observation were not verified.",
+    "Payment is the demo simulated payment service, not an external bank ledger.",
+    "Image digests pinned; 3.1.0 source tag is a reference, not verified image build provenance."
+  ],
+  "orders": [
+    {
+      "index": 0,
+      "traceId": "0726f5bd2b1f428f9ccebc97b55a5804",
+      "userId": "t11-fault-891b933e7d6c4da08163b18ecfb27458",
+      "startedAt": "2026-11-15T11:32:22.200005+00:00",
+      "response": {
+        "order": {
+          "orderId": "39584cbf-e0e8-11f1-a932-72ae03d4ea3d",
+          "shippingTrackingId": "692699b1-2e9c-49bb-851d-e1ffd83dbe32",
+          "shippingCost": {
+            "currencyCode": "USD",
+            "units": "8",
+            "nanos": 990000000
+          },
+          "shippingAddress": {
+            "streetAddress": "1 Test Street",
+            "city": "Test City",
+            "state": "CA",
+            "country": "United States",
+            "zipCode": "94043"
+          },
+          "items": [
+            {
+              "item": {
+                "productId": "L9ECAV7KIM",
+                "quantity": 1
+              },
+              "cost": {
+                "currencyCode": "USD",
+                "units": "21",
+                "nanos": 949999999
+              }
+            }
+          ]
+        }
+      },
+      "endedAt": "2026-11-15T11:32:22.460629+00:00"
+    },
+    {
+      "index": 1,
+      "traceId": "31c726329d68478c82850dc83aa984be",
+      "userId": "t11-fault-a76469d170674078956e2a2e04652848",
+      "startedAt": "2026-11-15T11:32:23.467244+00:00",
+      "response": {
+        "order": {
+          "orderId": "3a163b7d-e0e8-11f1-a932-72ae03d4ea3d",
+          "shippingTrackingId": "64df9d57-8f61-4a1e-8f0b-5bbe331e225e",
+          "shippingCost": {
+            "currencyCode": "USD",
+            "units": "8",
+            "nanos": 990000000
+          },
+          "shippingAddress": {
+            "streetAddress": "1 Test Street",
+            "city": "Test City",
+            "state": "CA",
+            "country": "United States",
+            "zipCode": "94043"
+          },
+          "items": [
+            {
+              "item": {
+                "productId": "L9ECAV7KIM",
+                "quantity": 1
+              },
+              "cost": {
+                "currencyCode": "USD",
+                "units": "21",
+                "nanos": 949999999
+              }
+            }
+          ]
+        }
+      },
+      "endedAt": "2026-11-15T11:32:23.700177+00:00"
+    },
+    {
+      "index": 2,
+      "traceId": "431dbbd4c76e4800831afb2c9161d137",
+      "userId": "t11-fault-bef9ba70ba8043f9a8757729e4572611",
+      "startedAt": "2026-11-15T11:32:24.705886+00:00",
+      "response": {
+        "order": {
+          "orderId": "3ad164ef-e0e8-11f1-a932-72ae03d4ea3d",
+          "shippingTrackingId": "24362b23-b47c-4c44-940b-b62612765185",
+          "shippingCost": {
+            "currencyCode": "USD",
+            "units": "8",
+            "nanos": 990000000
+          },
+          "shippingAddress": {
+            "streetAddress": "1 Test Street",
+            "city": "Test City",
+            "state": "CA",
+            "country": "United States",
+            "zipCode": "94043"
+          },
+          "items": [
+            {
+              "item": {
+                "productId": "L9ECAV7KIM",
+                "quantity": 1
+              },
+              "cost": {
+                "currencyCode": "USD",
+                "units": "21",
+                "nanos": 949999999
+              }
+            }
+          ]
+        }
+      },
+      "endedAt": "2026-11-15T11:32:24.921222+00:00"
+    },
+    {
+      "index": 3,
+      "traceId": "69d71cc746d24203bb192e5284807acd",
+      "userId": "t11-fault-cef65efa11814b5986851754b4e230db",
+      "startedAt": "2026-11-15T11:32:25.927167+00:00",
+      "response": {
+        "order": {
+          "orderId": "3b8d1030-e0e8-11f1-a932-72ae03d4ea3d",
+          "shippingTrackingId": "6b2a7a43-3235-4ee7-9548-dac5af1aa547",
+          "shippingCost": {
+            "currencyCode": "USD",
+            "units": "8",
+            "nanos": 990000000
+          },
+          "shippingAddress": {
+            "streetAddress": "1 Test Street",
+            "city": "Test City",
+            "state": "CA",
+            "country": "United States",
+            "zipCode": "94043"
+          },
+          "items": [
+            {
+              "item": {
+                "productId": "L9ECAV7KIM",
+                "quantity": 1
+              },
+              "cost": {
+                "currencyCode": "USD",
+                "units": "21",
+                "nanos": 949999999
+              }
+            }
+          ]
+        }
+      },
+      "endedAt": "2026-11-15T11:32:26.150608+00:00"
+    },
+    {
+      "index": 4,
+      "traceId": "a7683b822596427f88bc750ff9fdc6c2",
+      "userId": "t11-fault-d6864bfb8f9042ad88ea7a41fd4d9777",
+      "startedAt": "2026-11-15T11:32:27.155653+00:00",
+      "error": "ERROR:\n  Code: DeadlineExceeded\n  Message: context deadline exceeded\n",
+      "endedAt": "2026-11-15T11:32:37.336151+00:00"
+    }
+  ],
+  "databaseOrderIds": [
+    "333c3c35-e0e8-11f1-a932-72ae03d4ea3d",
+    "33c174ff-e0e8-11f1-a932-72ae03d4ea3d",
+    "34442ae7-e0e8-11f1-a932-72ae03d4ea3d",
+    "39584cbf-e0e8-11f1-a932-72ae03d4ea3d",
+    "3a163b7d-e0e8-11f1-a932-72ae03d4ea3d",
+    "3ad164ef-e0e8-11f1-a932-72ae03d4ea3d",
+    "3b8d1030-e0e8-11f1-a932-72ae03d4ea3d",
+    "3c46c35d-e0e8-11f1-a932-72ae03d4ea3d",
+    "64fc88bd-e0e7-11f1-a932-72ae03d4ea3d",
+    "65b889dd-e0e7-11f1-a932-72ae03d4ea3d",
+    "667488dd-e0e7-11f1-a932-72ae03d4ea3d",
+    "67328a0d-e0e7-11f1-a932-72ae03d4ea3d",
+    "67ed0620-e0e7-11f1-a932-72ae03d4ea3d",
+    "84e9e6f7-e0e7-11f1-a932-72ae03d4ea3d",
+    "d9952f01-e0e6-11f1-a932-72ae03d4ea3d",
+    "dac0bf45-e0e6-11f1-a932-72ae03d4ea3d",
+    "db579442-e0e6-11f1-a932-72ae03d4ea3d"
+  ],
+  "acceptedOrderIds": [
+    "39584cbf-e0e8-11f1-a932-72ae03d4ea3d",
+    "3a163b7d-e0e8-11f1-a932-72ae03d4ea3d",
+    "3ad164ef-e0e8-11f1-a932-72ae03d4ea3d",
+    "3b8d1030-e0e8-11f1-a932-72ae03d4ea3d"
+  ],
+  "missingOrderIds": [],
+  "postRecoveryControl": {
+    "index": "post-recovery-control",
+    "traceId": "54e7f11a703a4d8f8ce48899a34429b9",
+    "userId": "t11-fault-e4caca6b667e47a3bddb494d12fc8aa1",
+    "startedAt": "2026-11-15T11:33:15.952185+00:00",
+    "response": {
+      "order": {
+        "orderId": "596087f5-e0e8-11f1-a932-72ae03d4ea3d",
+        "shippingTrackingId": "8115df21-c8af-43d9-bf7b-ece2678267c2",
+        "shippingCost": {
+          "currencyCode": "USD",
+          "units": "8",
+          "nanos": 990000000
+        },
+        "shippingAddress": {
+          "streetAddress": "1 Test Street",
+          "city": "Test City",
+          "state": "CA",
+          "country": "United States",
+          "zipCode": "94043"
+        },
+        "items": [
+          {
+            "item": {
+              "productId": "L9ECAV7KIM",
+              "quantity": 1
+            },
+            "cost": {
+              "currencyCode": "USD",
+              "units": "21",
+              "nanos": 949999999
+            }
+          }
+        ]
+      }
+    },
+    "endedAt": "2026-11-15T11:33:16.196353+00:00"
+  },
+  "postRecoveryControlDelivered": true,
+  "endedAt": "2026-11-15T11:33:22.497830+00:00",
+  "dimensions": {
+    "exposure": "TRUE",
+    "activation": "UNKNOWN",
+    "consequence": "UNKNOWN_FOR_TIMED_OUT_REQUEST",
+    "protection": "UNKNOWN"
+  },
+  "baselineAccepted": 3,
+  "baselineDelivered": 3,
+  "faultAccepted": 4,
+  "faultRequestErrors": 1,
+  "faultAcceptedDeliveredWithin30Seconds": 4,
+  "unresolvedRequestTraceIds": [
+    "a7683b822596427f88bc750ff9fdc6c2"
+  ],
+  "observedDroppedPackets": 16
+}
